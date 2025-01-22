@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu, X } from 'lucide-react';
-import icon from '../assets/icon.png';
+import icon from '../Assets/icon.png';
 
 interface HeaderProps {
   isMenuOpen: boolean;
