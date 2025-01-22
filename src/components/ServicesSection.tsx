@@ -1,0 +1,125 @@
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight, GraduationCap, Lightbulb, Users, FileCheck, Wrench } from 'lucide-react';
+
+const services = [
+  {
+    title: 'Cursos certificados',
+    description: 'Programas de formación especializados con certificación oficial.',
+    icon: GraduationCap,
+    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80'
+  },
+  {
+    title: 'Asesorías y consultas',
+    description: 'Consultoría experta en seguridad industrial y gestión HSEQ.',
+    icon: Lightbulb,
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80'
+  },
+  {
+    title: 'Capacitaciones',
+    description: 'Programas de entrenamiento personalizados para empresas.',
+    icon: Users,
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80'
+  },
+  {
+    title: 'Generar certificados',
+    description: 'Sistema de gestión y emisión de certificaciones digitales.',
+    icon: FileCheck,
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80'
+  },
+  {
+    title: 'Otros servicios',
+    description: 'Soluciones adicionales adaptadas a sus necesidades específicas.',
+    icon: Wrench,
+    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80'
+  }
+];
+
+const ServicesSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState<'left' | 'right'>('right');
+
+  const nextSlide = () => {
+    setDirection('right');
+    setCurrentIndex((prevIndex) => 
+      prevIndex === services.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevSlide = () => {
+    setDirection('left');
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? services.length - 1 : prevIndex - 1
+    );
+  };
+
+  return (
+    <section id="servicios" className="py-20 bg-white overflow-hidden">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12 animate-fade-in">Nuestros Servicios</h2>
+        
+        <div className="relative">
+          <div className="flex items-center justify-center">
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 z-10 p-2 bg-blue-900 text-white rounded-full hover:bg-blue-800 transition-all duration-300 hover:scale-110"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            <div className="w-full max-w-4xl">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="relative h-[300px] overflow-hidden rounded-lg transform transition-transform duration-500">
+                  <img
+                    key={currentIndex}
+                    src={services[currentIndex].image}
+                    alt={services[currentIndex].title}
+                    className={`w-full h-full object-cover transform transition-all duration-500 hover:scale-110 ${
+                      direction === 'right' ? 'animate-slide-in' : 'animate-slide-in'
+                    }`}
+                  />
+                </div>
+                <div className="text-center md:text-left animate-fade-in">
+                  <div className="flex items-center justify-center md:justify-start mb-4">
+                    {React.createElement(services[currentIndex].icon, {
+                      className: "w-12 h-12 text-blue-900 animate-float"
+                    })}
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {services[currentIndex].title}
+                  </h3>
+                  <p className="text-gray-700">
+                    {services[currentIndex].description}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 z-10 p-2 bg-blue-900 text-white rounded-full hover:bg-blue-800 transition-all duration-300 hover:scale-110"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+
+          <div className="flex justify-center mt-6 space-x-2">
+            {services.map((_, index) => (
+              <button
+                key={index}
+                className={`w-3 h-3 rounded-full transition-all duration-300 transform hover:scale-125 ${
+                  currentIndex === index ? 'bg-blue-900 scale-110' : 'bg-gray-300'
+                }`}
+                onClick={() => {
+                  setDirection(index > currentIndex ? 'right' : 'left');
+                  setCurrentIndex(index);
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ServicesSection;
