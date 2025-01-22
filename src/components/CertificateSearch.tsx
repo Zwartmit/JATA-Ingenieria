@@ -13,11 +13,9 @@ const CertificateSearch = () => {
     setLoading(true);
     setError('');
 
-    // Replace FOLDER_ID with your actual Google Drive folder ID
     const driveUrl = 'https://drive.google.com/drive/folders/1VHVyLDhRAd4u3eCFMPq-lbnsLeZbyl8I';
     const searchUrl = `${driveUrl}?q=${cedula}.pdf`;
     
-    // Open the Google Drive folder filtered with the search query
     window.open(searchUrl, '_blank');
     setLoading(false);
   };
@@ -39,7 +37,7 @@ const CertificateSearch = () => {
                   id="cedula"
                   value={cedula}
                   onChange={(e) => {
-                    setCedula(e.target.value.replace(/\D/g, '')); // Only allow numbers
+                    setCedula(e.target.value.replace(/\D/g, ''));
                     setError('');
                   }}
                   className="block w-full rounded-md py-2 px-4 text-gray-900 focus:ring-2 focus:ring-white transition-all duration-300 hover:shadow-lg"

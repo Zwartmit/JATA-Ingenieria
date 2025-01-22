@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu, X } from 'lucide-react';
+import icon from '../assets/icon.png';
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -15,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center animate-slide-in">
-            <img src="src/assets/icon.png" alt="JATA" style={{ width: '40px', height: '40px' } }/>
+            <img src={icon} alt="JATA" style={{ width: '40px', height: '40px' } }/>
             <span className="ml-2 text-2xl font-bold text-blue-900">JATA Mantenimientos e Ingeniería HSEQ</span>
           </div>
 
