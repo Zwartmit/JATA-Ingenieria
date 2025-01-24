@@ -23,11 +23,11 @@ const CertificateSearch = () => {
   return (
     <section id="certificados" className="py-20 bg-blue-900 text-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in">Certificados</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>Certificados</h2>
         
         <div className="max-w-md mx-auto animate-scale-in">
           <form onSubmit={handleSearch} className="space-y-4">
-            <div>
+            <div style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>
               <label htmlFor="cedula" className="block text-sm font-medium mb-2">
                 Número de Cédula
               </label>
@@ -66,10 +66,10 @@ const CertificateSearch = () => {
           )}
 
           <div className="mt-8 text-center text-sm space-y-4 stagger">
-            <p className="animate-fade-in">
+            <p className="animate-fade-in" style={{ textShadow: '0px 0px 3px rgba(0, 0, 0)' }}>
               Ingrese su número de cédula para buscar su certificado.
             </p>
-            <p className="text-blue-200 animate-fade-in">
+            <p className="text-blue-200 animate-fade-in" style={{ textShadow: '0px 0px 3px rgb(0, 0, 0)' }}>
               Se abrirá una nueva ventana con el resultado de la búsqueda.
             </p>
           </div>

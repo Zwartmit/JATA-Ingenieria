@@ -1,63 +1,74 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, GraduationCap, Lightbulb, Users, FileCheck, Wrench } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const services = [
   {
     title: 'Cursos certificados',
     description: 'Programas de formación especializados con certificación oficial.',
     icon: GraduationCap,
-    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80',
+    link: '/cursos-certificados'
   },
   {
     title: 'Asesorías y consultas',
     description: 'Consultoría experta en seguridad industrial y gestión HSEQ.',
     icon: Lightbulb,
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80',
+    link: '/asesorias'
   },
   {
     title: 'Capacitaciones',
     description: 'Programas de entrenamiento personalizados para empresas.',
     icon: Users,
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80',
+    link: '/capacitaciones'
   },
   {
     title: 'Generar certificados',
     description: 'Sistema de gestión y emisión de certificaciones digitales.',
     icon: FileCheck,
-    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80',
+    link: '/generar-certificados'
   },
   {
     title: 'Otros servicios',
     description: 'Soluciones adicionales adaptadas a sus necesidades específicas.',
     icon: Wrench,
-    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80',
+    link: '/otros-servicios'
   }
 ];
 
 const ServicesSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState<'left' | 'right'>('right');
+  const navigate = useNavigate();
 
   const nextSlide = () => {
     setDirection('right');
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === services.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevSlide = () => {
     setDirection('left');
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? services.length - 1 : prevIndex - 1
     );
+  };
+
+  const handleRedirect = () => {
+    navigate(services[currentIndex].link);
   };
 
   return (
     <section id="servicios" className="py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12 animate-fade-in">Nuestros Servicios</h2>
-        
-        <div className="relative">
+        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12 animate-fade-in" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>Nuestros Servicios</h2>
+
+        <div className="relative" style={{ textShadow: '0px 0px 3px rgba(0, 0, 0, 0.5)' }}>
           <div className="flex items-center justify-center">
             <button
               onClick={prevSlide}
@@ -66,7 +77,10 @@ const ServicesSection = () => {
               <ChevronLeft className="w-6 h-6" />
             </button>
 
-            <div className="w-full max-w-4xl">
+            <div
+              className="w-full max-w-4xl cursor-pointer"
+              onClick={handleRedirect}
+            >
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="relative h-[300px] overflow-hidden rounded-lg transform transition-transform duration-500">
                   <img

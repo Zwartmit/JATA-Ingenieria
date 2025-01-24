@@ -3,8 +3,8 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 const ContactSection = () => {
   return (
     <section id="contacto" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">Contacto</h2>
+      <div className="container mx-auto px-4" style={{ alignItems: 'center' }}>
+        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>Contacto</h2>
           <div className="space-y-8">
           <div className="flex items-center space-x-4">
             <Mail className="w-6 h-6 text-blue-900" />
@@ -34,7 +34,7 @@ const ContactSection = () => {
             </div>
           </div>
           
-          <div className="flex space-x-4 mt-6">
+          <div className="flex space-x-4 mt-6" style={{ textAlign: 'justify', textShadow: '0px 0px 3px rgba(0, 0, 0, 0.5)' }}>
             <a
               href="https://wa.me/573177268534"
               target="_blank"

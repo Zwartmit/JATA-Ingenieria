@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu, X } from 'lucide-react';
-import icon from '../Assets/icon.png';
+import icon from '../Assets/Logo.png';
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -12,12 +12,12 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
   const menuLinks = ['inicio', 'nosotros', 'servicios', 'certificados', 'galeria', 'contacto'];
 
   return (
-    <header className="fixed w-full bg-white shadow-md z-50">
+    <header className="fixed w-full bg-white shadow-md z-50" style={{ boxShadow: '0 3px 4px rgba(0, 0, 0, 0.88)' }}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center animate-slide-in">
-            <img src={icon} alt="JATA" style={{ width: '40px', height: '40px' } }/>
-            <span className="ml-2 text-2xl font-bold text-blue-900">JATA Mantenimientos e Ingeniería HSEQ</span>
+            <img src={icon} alt="JATA" style={{ width: 'auto', height: '60px' } }/>
+            <span className="ml-2 text-xl sm:text-2xl font-bold text-blue-900" style={{ textShadow: '0 0 5px rgba(0, 0, 0, 0.3)' }}>JATA Mantenimientos e Ingeniería HSEQ</span>
           </div>
 
           <nav className="hidden md:flex space-x-8 stagger">

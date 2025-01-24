@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
@@ -34,7 +34,7 @@ const GallerySection = () => {
   return (
     <section id="galeria" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">Galería</h2>
+        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>Galería</h2>
         
         <div className="relative">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -44,6 +44,7 @@ const GallerySection = () => {
                   src={image}
                   alt={`Gallery image ${index + 1}`}
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  style={{ boxShadow: '3px 3px 4px rgba(0, 0, 0)' }}
                 />
               </div>
             ))}
