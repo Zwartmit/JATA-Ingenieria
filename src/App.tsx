@@ -7,6 +7,7 @@ import ContactSection from './components/ContactSection';
 import CertificateSearch from './components/CertificateSearch';
 import CoursePage from './pages/CoursePage';
 import { useState } from 'react';
+import back from './Assets/back.jpeg';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +27,7 @@ function App() {
                     id="inicio"
                     className="min-h-screen flex items-center justify-center text-white"
                     style={{
-                      backgroundImage: "url('../src/Assets/back.jpeg')",
+                      backgroundImage: `url(${back})`,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                     }}

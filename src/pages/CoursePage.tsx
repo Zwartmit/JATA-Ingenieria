@@ -1,64 +1,77 @@
+import izaje from "../Assets/Courses/Izaje.jpeg";
+import rigger from "../Assets/Courses/Rigger.jpg";
+import montacargas from "../Assets/Courses/Montacargas.jpg";
+import minicargador from "../Assets/Courses/Minicargador.jpeg";
+import excavadora from "../Assets/Courses/Excavadora.jpg";
+import manlift from "../Assets/Courses/Manlift.jpeg";
+import cargador from "../Assets/Courses/Cargador.jpg";
+import grua1 from "../Assets/Courses/Grua.jpg";
+import grua2 from "../Assets/Courses/Grua.png";
+import puente from "../Assets/Courses/Puente.jpg";
+import alturas from "../Assets/Courses/Alturas.jpg";
+import manejo from "../Assets/Courses/Manejo.jpg";
+
 const CoursePage = () => {
     const courses = [
       {
         title: "Supervisor de Maniobras de Izaje",
         description: "Curso especializado en la supervisión de maniobras de izaje, garantizando seguridad y eficiencia en el manejo de cargas.",
-        image: "../src/Assets/Courses/Izaje.jpeg",
+        image: izaje,
       },
       {
         title: "Aparejador Rigger",
         description: "Formación para aparejadores rigger con énfasis en técnicas de izaje seguro y cálculo de capacidades de carga.",
-        image: "../src/Assets/Courses/Rigger.png",
+        image: rigger,
       },
       {
         title: "Operador de Montacargas",
         description: "Certificación en operación de montacargas, asegurando el manejo seguro y eficiente de equipos.",
-        image: "../src/Assets/Courses/Montacargas.jpeg",
+        image: montacargas,
       },
       {
         title: "Operador de Minicargador",
         description: "Curso diseñado para operadores de minicargadores, enfocado en el manejo y mantenimiento del equipo.",
-        image: "../src/Assets/Courses/Minicargador.jpeg",
+        image: minicargador,
       },
       {
         title: "Operador de Excavadora Hidráulica",
         description: "Formación en el uso y operación de excavadoras hidráulicas, con prácticas en campo.",
-        image: "../src/Assets/Courses/Excavadora.jpeg",
+        image: excavadora,
       },
       {
         title: "Operador de Manlift",
         description: "Certificación para operadores de plataformas de elevación, con énfasis en seguridad laboral.",
-        image: "../src/Assets/Courses/Manlift.jpeg",
+        image: manlift,
       },
       {
         title: "Operador de Cargador Frontal",
         description: "Capacitación para operadores de cargadores frontales, cubriendo técnicas de operación y seguridad.",
-        image: "../src/Assets/Courses/Cargador.jpeg",
+        image: cargador,
       },
       {
         title: "Operador de Camión Grúa",
         description: "Curso certificado en operación de camiones grúa, con énfasis en maniobras seguras.",
-        image: "../src/Assets/Courses/Grua.jpeg",
+        image: grua1,
       },
       {
         title: "Operador de Grúa Móvil",
         description: "Formación completa en operación de grúas móviles, asegurando cumplimiento normativo y eficiencia operativa.",
-        image: "../src/Assets/Courses/Grua.jpg",
+        image: grua2,
       },
       {
         title: "Operador de Puente Grúa",
         description: "Certificación para operadores de puente grúa, incluyendo prácticas de izaje y normas de seguridad.",
-        image: "../src/Assets/Courses/Puente.jpeg",
+        image: puente,
       },
       {
         title: "Tareas de Alto Riesgo",
         description: "Formación en tareas de alto riesgo, con enfoque en prevención y control de accidentes.",
-        image: "../src/Assets/Courses/Alturas.png",
+        image: alturas,
       },
       {
         title: "Manejo Defensivo",
         description: "Curso de manejo defensivo, diseñado para mejorar las habilidades al volante y prevenir accidentes.",
-        image: "../src/Assets/Courses/Manejo.jpg",
+        image: manejo,
       },
     ];
   
