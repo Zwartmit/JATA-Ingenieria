@@ -1,6 +1,6 @@
-import React from 'react';
-import { Menu, X } from 'lucide-react';
-import icon from '../Assets/Logo.png';
+import { Menu, X, Home } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+import icon from '../Assets/LogoT.png';
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -8,50 +8,75 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
+  const location = useLocation();
   const menuItems = ['Inicio', 'Nosotros', 'Servicios', 'Certificados', 'Galería', 'Contacto'];
   const menuLinks = ['inicio', 'nosotros', 'servicios', 'certificados', 'galeria', 'contacto'];
 
+  const isCursoPage = location.pathname === '/cursos-certificados';
+  const isAsesoriasPage = location.pathname === '/asesorias';
+  const isCapacitacionesPage = location.pathname === '/capacitaciones';
+  const isOtrosServiciosPage = location.pathname === '/otros-servicios';
+
+  const shouldHideMenu = isCursoPage || isAsesoriasPage || isCapacitacionesPage || isOtrosServiciosPage;
+
   return (
-    <header className="fixed w-full bg-white shadow-md z-50">
+    <header className="fixed w-full shadow-md z-50" style={{ background: '#e1e1e1' }}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center animate-slide-in">
-            <img src={icon} alt="JATA" style={{ width: 'auto', height: '60px' } }/>
+            <img src={icon} alt="JATA" style={{ width: 'auto', height: '60px' }} />
             <span className="ml-2 text-xl sm:text-2xl font-bold" style={{ color: "#12297D", textShadow: '0 0 5px rgba(0, 0, 0, 0.3)' }}>JATA Mantenimientos e Ingeniería HSEQ</span>
           </div>
 
-          <nav className="hidden md:flex space-x-8 stagger">
-            {menuItems.map((item, index) => (
-              <a
-                key={item}
-                href={`/#${menuLinks[index]}`}
-                className="text-gray-700 hover:text-blue-900 transition-all duration-300 hover:scale-105 animate-fade-in"
-              >
-                {item}
-              </a>
-            ))}
-          </nav>
+          {!shouldHideMenu && (
+            <nav className="hidden md:flex space-x-8 stagger">
+              {menuItems.map((item, index) => (
+                <a
+                  key={item}
+                  href={`/#${menuLinks[index]}`}
+                  className="text-black font-semibold hover:text-blue-900 transition-all duration-300 hover:scale-105 animate-fade-in"
+                >
+                  {item}
+                </a>
+              ))}
+            </nav>
+          )}
 
-          <button
-            className="md:hidden transition-transform duration-300 hover:scale-110"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6 text-blue-900" />
-            ) : (
-              <Menu className="h-6 w-6 text-blue-900" />
-            )}
-          </button>
+          {(isCursoPage || isAsesoriasPage || isCapacitacionesPage || isOtrosServiciosPage) && (
+            <a href="/" className="md:block hidden">
+              <Home className="h-6 w-6 text-blue-900" />
+            </a>
+          )}
+
+          {!shouldHideMenu && (
+            <button
+              className="md:hidden transition-transform duration-300 hover:scale-110 animate-fade-in"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6 text-blue-900" />
+              ) : (
+                <Menu className="h-6 w-6 text-blue-900" />
+              )}
+            </button>
+          )}
+
+          {(isCursoPage || isAsesoriasPage || isCapacitacionesPage || isOtrosServiciosPage) && (
+            <a href="/" className="md:hidden block">
+              <Home className="h-6 w-6 text-blue-900" />
+            </a>
+          )}
         </div>
 
-        {isMenuOpen && (
-          <div className="md:hidden animate-scale-in">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 stagger">
+        {isMenuOpen && !shouldHideMenu && (
+          <div className="md:hidden animate-scale-in text-center">
+            <div className="w-full h-[1px] bg-gradient-to-r from-[#12297D] via-[#E0E3EB] to-[#12297D] mx-auto"></div>
+            <div className="grid grid-cols-3 gap-4 px-2 pt-2 pb-3 sm:px-3 stagger">
               {menuItems.map((item, index) => (
                 <a
                   key={item}
                   href={`#${menuLinks[index]}`}
-                  className="block px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-50 transition-all duration-300 rounded-md animate-fade-in"
+                  className="text-black font-semibold hover:text-blue-900 transition-all duration-300 hover:scale-105 animate-fade-in"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item}

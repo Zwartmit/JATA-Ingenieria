@@ -57,12 +57,17 @@ function App() {
                       </a>
                     </div>
                   </section>
-                  <div style={{ background: "linear-gradient(180deg, rgba(7,45,117,1) 35%, rgba(255,255,255,1) 100%)" }}>&nbsp;</div>
+                  <div style={{ background: "linear-gradient(to bottom, #072d75, #e1e1e1)" }}>&nbsp;</div>
                   <AboutSection />
+                  <div className="w-full h-[2px] bg-gradient-to-r from-[#12297D] via-[#E0E3EB] to-[#12297D] mx-auto"></div>
                   <ServicesSection />
+                  <div style={{ background: "linear-gradient(to top, #072d75, #e1e1e1)" }}>&nbsp;</div>
                   <CertificateSearch />
+                  <div style={{ background: "linear-gradient(to bottom, #072d75, #e1e1e1)" }}>&nbsp;</div>
                   <GallerySection />
+                  <div className="w-full h-[2px] bg-gradient-to-r from-[#12297D] via-[#E0E3EB] to-[#12297D] mx-auto"></div>
                   <ContactSection />
+                  <div style={{ background: "linear-gradient(to top, #072d75, #e1e1e1)" }}>&nbsp;</div>
                 </>
               }
             />
@@ -76,8 +81,7 @@ function App() {
         <footer className="text-white py-8" style={{ backgroundColor: "#12297D" }} >
           <div className="container mx-auto px-4 text-center">
             <p>
-              &copy; {new Date().getFullYear()} JATA Mantenimientos e Ingeniería
-              HSEQ. Todos los derechos reservados.
+              &copy; {new Date().getFullYear()} JATA Mantenimientos e Ingeniería HSEQ. Todos los derechos reservados.
             </p>
           </div>
         </footer>

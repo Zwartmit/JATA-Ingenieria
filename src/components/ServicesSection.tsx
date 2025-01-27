@@ -37,9 +37,9 @@ const ServicesSection = () => {
   };
 
   return (
-    <section id="servicios" className="py-20 bg-white overflow-hidden">
+    <section id="servicios" className="py-20" style={{ backgroundColor: '#e1e1e1' }}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12 animate-fade-in" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>Nuestros Servicios</h2>
+        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12 animate-fade-in" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>Nuestros servicios</h2>
 
         <div className="relative" style={{ textShadow: '0px 0px 3px rgba(0, 0, 0, 0.5)' }}>
           <div className="flex items-center justify-center">

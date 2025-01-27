@@ -3,7 +3,7 @@ import icon from '../Assets/LogoT.png';
 
 const AboutSection = () => {
   return (
-    <section id="nosotros" className="py-20 bg-gray-50">
+    <section id="nosotros" className="py-20" style={{ backgroundColor: '#e1e1e1' }}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-12" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>Nosotros</h2>
         

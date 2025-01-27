@@ -23,7 +23,7 @@ const CertificateSearch = () => {
   return (
     <section id="certificados" className="py-20 text-white overflow-hidden" style={{ backgroundColor: '#12297D' }}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>Certificados</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>Generar certificados</h2>
         
         <div className="max-w-md mx-auto animate-scale-in">
           <form onSubmit={handleSearch} className="space-y-4">
