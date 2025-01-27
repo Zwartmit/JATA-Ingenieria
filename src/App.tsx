@@ -9,11 +9,32 @@ import CoursePage from "./pages/CursosPage";
 import AsesoriasPage from "./pages/AsesoriasPage";
 import CapacitacionesPage from "./pages/CapacitacionesPage";
 import OtrosServiciosPage from "./pages/OtrosServiciosPage";
-import { useState } from "react";
-import back from "./Assets/back.jpeg";
+import { useState, useEffect } from "react";
+import { ArrowUp } from "lucide-react";
+import back2 from "./Assets/back2.png";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showScrollButton, setShowScrollButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollButton(true);
+      } else {
+        setShowScrollButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <Router>
@@ -22,42 +43,21 @@ function App() {
 
         <main className="flex-grow pt-16">
           <Routes>
-            <Route
-              path="/"
-              element={
+            <Route path="/" element={
                 <>
-                  <section
-                    id="inicio"
-                    className="min-h-screen flex items-center justify-center text-white"
-                    style={{
-                      backgroundImage: `url(${back})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  >
-                    <div className="container mx-auto px-4 py-20 text-center bg-black bg-opacity-50 rounded-lg">
-                      <h1
-                        className="text-5xl md:text-6xl font-bold mb-6"
-                        style={{ textShadow: "4px 4px 4px rgb(0, 0, 0)" }}
-                      >
+                  <section id="inicio" className="min-h-screen flex items-center justify-center text-white" style={{ backgroundImage: `url(${back2})`, backgroundSize: "cover", backgroundPosition: "center" }} >
+                    <div className="container mx-auto px-4 py-20 text-center bg-black bg-opacity-60 rounded-lg">
+                      <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ textShadow: "4px 4px 4px rgb(0, 0, 0)" }} >
                         JATA Mantenimientos e Ingeniería HSEQ
                       </h1>
-                      <p
-                        className="text-xl md:text-2xl mb-8"
-                        style={{ textShadow: "4px 4px 4px rgb(0, 0, 0)" }}
-                      >
-                        Soluciones integrales en capacitación, certificación y
-                        mantenimiento mecánico e industrial.
+                      <p className="text-xl md:text-2xl mb-8" style={{ textShadow: "4px 4px 4px rgb(0, 0, 0)" }} >
+                        Soluciones integrales en capacitación, certificación y mantenimiento mecánico e industrial.
                       </p>
-                      <a
-                        href="#contacto"
-                        className="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition duration-300"
-                        style={{ boxShadow: "4px 4px 4px rgb(0, 0, 0)" }}
-                      >
-                        Contáctanos
+                      <a href="#contacto" className="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition duration-300" style={{ boxShadow: "4px 4px 4px rgb(0, 0, 0)" }} > Contáctanos
                       </a>
                     </div>
                   </section>
+                  <div style={{ background: "linear-gradient(180deg, rgba(7,45,117,1) 35%, rgba(255,255,255,1) 100%)" }}>&nbsp;</div>
                   <AboutSection />
                   <ServicesSection />
                   <CertificateSearch />
@@ -73,10 +73,7 @@ function App() {
           </Routes>
         </main>
 
-        <footer
-          className="text-white py-8"
-          style={{ backgroundColor: "#12297D" }}
-        >
+        <footer className="text-white py-8" style={{ backgroundColor: "#12297D" }} >
           <div className="container mx-auto px-4 text-center">
             <p>
               &copy; {new Date().getFullYear()} JATA Mantenimientos e Ingeniería
@@ -84,6 +81,12 @@ function App() {
             </p>
           </div>
         </footer>
+
+        {showScrollButton && (
+          <button onClick={scrollToTop} className="fixed bottom-6 right-6 bg-blue-900 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition" >
+            <ArrowUp size={24} />
+          </button>
+        )}
       </div>
     </Router>
   );

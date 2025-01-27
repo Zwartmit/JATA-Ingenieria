@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
   const menuLinks = ['inicio', 'nosotros', 'servicios', 'certificados', 'galeria', 'contacto'];
 
   return (
-    <header className="fixed w-full bg-white shadow-md z-50" style={{ boxShadow: '0 3px 4px rgba(0, 0, 0, 0.88)' }}>
+    <header className="fixed w-full bg-white shadow-md z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center animate-slide-in">

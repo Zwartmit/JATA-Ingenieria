@@ -1,43 +1,16 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, GraduationCap, Lightbulb, Users, FileCheck, Wrench } from 'lucide-react';
+import { ChevronLeft, ChevronRight, GraduationCap, Lightbulb, Users, Wrench } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import cursos from '../Assets/Servicios/Cursos.avif';
+import asesorias from '../Assets/Servicios/Asesorias.avif';
+import capacitaciones from '../Assets/Servicios/Capacitaciones.avif';
+import otros from '../Assets/Servicios/Otros.jpg';
 
 const services = [
-  {
-    title: 'Cursos certificados',
-    description: 'Programas de formación especializados con certificación oficial.',
-    icon: GraduationCap,
-    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80',
-    link: '/cursos-certificados'
-  },
-  {
-    title: 'Asesorías y consultas',
-    description: 'Consultoría experta en seguridad industrial y gestión HSEQ.',
-    icon: Lightbulb,
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80',
-    link: '/asesorias'
-  },
-  {
-    title: 'Capacitaciones',
-    description: 'Programas de entrenamiento personalizados para empresas.',
-    icon: Users,
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80',
-    link: '/capacitaciones'
-  },
-  {
-    title: 'Generar certificados',
-    description: 'Sistema de gestión y emisión de certificaciones digitales.',
-    icon: FileCheck,
-    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80',
-    link: ''
-  },
-  {
-    title: 'Otros servicios',
-    description: 'Soluciones adicionales adaptadas a sus necesidades específicas.',
-    icon: Wrench,
-    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80',
-    link: '/otros-servicios'
-  }
+  { title: 'Cursos certificados', description: 'Programas de formación especializados con certificación oficial.', icon: GraduationCap, image: cursos, link: '/cursos-certificados' },
+  { title: 'Asesorías y consultas', description: 'Consultoría experta en seguridad industrial y gestión HSEQ.', icon: Lightbulb, image: asesorias, link: '/asesorias' },
+  { title: 'Capacitaciones', description: 'Programas de entrenamiento personalizados para empresas.', icon: Users, image: capacitaciones, link: '/capacitaciones' },
+  { title: 'Otros servicios', description: 'Soluciones adicionales adaptadas a sus necesidades específicas.', icon: Wrench, image: otros, link: '/otros-servicios' }
 ];
 
 const ServicesSection = () => {

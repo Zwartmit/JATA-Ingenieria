@@ -1,17 +1,18 @@
 import { Clock, Users, Award } from 'lucide-react';
+import icon from '../Assets/LogoT.png';
 
 const AboutSection = () => {
   return (
     <section id="nosotros" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>Sobre Nosotros</h2>
+        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>Nosotros</h2>
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', }}>
             <img
-              src="https://images.unsplash.com/photo-1581094794329-c8112c4e5190?auto=format&fit=crop&q=80"
+              src={icon}
+              style={{ width: 'auto', height: '250px', filter: 'drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5))', alignContent: 'center' }}
               alt="Equipo JATA"
-              className="rounded-lg shadow-lg w-full h-[400px] object-cover"
             />
           </div>
           

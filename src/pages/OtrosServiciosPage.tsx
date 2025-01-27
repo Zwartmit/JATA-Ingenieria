@@ -6,45 +6,19 @@ function OtrosServiciosPage() {
   }, []);
 
   const servicios = [
-    {
-      title: "Auditorías Internas",
-      description:
-        "Realizamos auditorías internas para evaluar el cumplimiento de normativas y estándares, asegurando la calidad de los procesos organizacionales.",
-    },
-    {
-      title: "Gestión Documental",
-      description:
-        "Ofrecemos servicios de organización, digitalización y control documental para una gestión eficiente y segura de la información empresarial.",
-    },
-    {
-      title: "Análisis de Riesgos",
-      description:
-        "Identificamos, evaluamos y proponemos soluciones efectivas para mitigar riesgos en diferentes áreas operativas.",
-    },
-    {
-      title: "Mantenimiento Preventivo y Correctivo",
-      description:
-        "Servicios de mantenimiento para equipos e instalaciones, garantizando su óptimo funcionamiento y prolongando su vida útil.",
-    },
-    {
-      title: "Diseño de Programas de Seguridad",
-      description:
-        "Desarrollamos programas personalizados de seguridad y salud en el trabajo adaptados a las necesidades específicas de tu empresa.",
-    },
-    {
-      title: "Capacitaciones Personalizadas",
-      description:
-        "Ofrecemos capacitaciones ajustadas a las necesidades específicas de tu equipo, enfocadas en mejorar la productividad y seguridad laboral.",
-    },
+    { title: "", description: ".", },
+    { title: "", description: ".", },
+    { title: "", description: ".", },
+    { title: "", description: ".", },
+    { title: "", description: ".", },
+    { title: "", description: ".", },
   ];
 
   return (
     <section className="py-12 bg-gray-100">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-gray-900 mb-6 text-center">
-          Otros Servicios
-        </h2>
-        <p className="text-lg text-gray-700 mb-10 text-center">
+        <h2 className="text-4xl font-bold text-gray-900 mb-6 text-center" style={{ textAlign: 'center', textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>Otros Servicios</h2>
+        <p className="text-lg text-gray-700 mb-10 text-center" style={{ textAlign: 'center', textShadow: '0px 0px 3px rgba(0, 0, 0, 0.5)' }}>
           Descubre otros servicios diseñados para potenciar la eficiencia y seguridad en tu organización.
         </p>
 
@@ -52,12 +26,17 @@ function OtrosServiciosPage() {
           {servicios.map((servicio, index) => (
             <div
               key={index}
-              className="border border-gray-300 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300 bg-white"
+              className="border border-gray-300 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-700 hover:scale-105 transform bg-white"
+              style={{ textAlign: 'center', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)' }}
             >
-              <h3 className="text-2xl font-semibold text-blue-900 mb-4">
+            <img
+              alt={servicio.title}
+              className="w-full h-48 object-cover rounded-md mb-4"
+            />
+              <h3 className="text-2xl font-semibold text-blue-900 mb-4" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>
                 {servicio.title}
               </h3>
-              <p className="text-gray-700">{servicio.description}</p>
+              <p className="text-gray-700" style={{ textShadow: '0px 0px 3px rgba(0, 0, 0, 0.5)'}}>{servicio.description}</p>
             </div>
           ))}
         </div>
