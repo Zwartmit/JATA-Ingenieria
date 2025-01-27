@@ -29,7 +29,7 @@ const services = [
     description: 'Sistema de gestión y emisión de certificaciones digitales.',
     icon: FileCheck,
     image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80',
-    link: '/generar-certificados'
+    link: ''
   },
   {
     title: 'Otros servicios',

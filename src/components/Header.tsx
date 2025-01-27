@@ -17,14 +17,14 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center animate-slide-in">
             <img src={icon} alt="JATA" style={{ width: 'auto', height: '60px' } }/>
-            <span className="ml-2 text-xl sm:text-2xl font-bold text-blue-900" style={{ textShadow: '0 0 5px rgba(0, 0, 0, 0.3)' }}>JATA Mantenimientos e Ingeniería HSEQ</span>
+            <span className="ml-2 text-xl sm:text-2xl font-bold" style={{ color: "#12297D", textShadow: '0 0 5px rgba(0, 0, 0, 0.3)' }}>JATA Mantenimientos e Ingeniería HSEQ</span>
           </div>
 
           <nav className="hidden md:flex space-x-8 stagger">
             {menuItems.map((item, index) => (
               <a
                 key={item}
-                href={`#${menuLinks[index]}`}
+                href={`/#${menuLinks[index]}`}
                 className="text-gray-700 hover:text-blue-900 transition-all duration-300 hover:scale-105 animate-fade-in"
               >
                 {item}
