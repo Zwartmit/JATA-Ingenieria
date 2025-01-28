@@ -45,6 +45,7 @@ const CertificateSearch = () => {
                   pattern="[0-9]*"
                   inputMode="numeric"
                   disabled={loading}
+                  style={{ boxShadow: '0px 0px 20px rgb(0, 0, 0)' }}
                 />
                 <button
                   type="submit"
@@ -66,11 +67,11 @@ const CertificateSearch = () => {
           )}
 
           <div className="mt-8 text-center text-sm space-y-4 stagger">
-            <p className="animate-fade-in" style={{ textShadow: '0px 0px 3px rgba(0, 0, 0)' }}>
+            {/* <p className="animate-fade-in" style={{ textShadow: '0px 0px 3px rgba(0, 0, 0)' }}>
               Ingrese su número de cédula para buscar su certificado.
-            </p>
+            </p> */}
             <p className="text-blue-200 animate-fade-in" style={{ textShadow: '0px 0px 3px rgb(0, 0, 0)' }}>
-              Se abrirá una nueva ventana con el resultado de la búsqueda.
+              El certificado se descargará automaticamente.
             </p>
           </div>
         </div>
