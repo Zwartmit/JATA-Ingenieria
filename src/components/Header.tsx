@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
         <div className="flex items-center animate-slide-in">
-          <img src={icon} alt="JATA" style={{ width: 'auto', height: '60px' }} />
+          <a href="/"><img src={icon} alt="JATA" style={{ width: 'auto', height: '60px' }} /></a>
           <span className="ml-2 text-xl sm:text-2xl font-bold" style={{ color: "#12297D", textShadow: '0 0 5px rgba(0, 0, 0, 0.3)' }}>
             <span className="block sm:inline">JATA Mantenimientos </span>
             <span className="block sm:inline">e Ingeniería HSEQ</span>
