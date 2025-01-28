@@ -1,6 +1,5 @@
 import { Clock, Users, Award, FileText } from 'lucide-react';
 import icon from '../Assets/LogoT.png';
-import { useState } from 'react';
 import pdf from '../Assets/Cámara de comercio.pdf';
 
 const AboutSection = () => {

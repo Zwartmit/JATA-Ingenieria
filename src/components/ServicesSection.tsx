@@ -17,7 +17,7 @@ const services = [
   },
   { 
     title: 'Asesorías y consultas', 
-    description: 'Brindamos consultoría experta en seguridad industrial, salud ocupacional y gestión HSEQ, adaptada a las necesidades de cada empresa. Nuestros asesores altamente calificados le ayudarán a optimizar sus procesos y cumplir con la normativa vigente para asegurar la integridad y eficiencia de su equipo y operaciones.', 
+    description: 'Brindamos consultoría experta en seguridad industrial, salud ocupacional y gestión HSEQ adaptada a las necesidades de cada empresa. Nuestros asesores altamente calificados le ayudarán a optimizar sus procesos y cumplir con la normativa vigente para asegurar la integridad y eficiencia de su equipo y operaciones.', 
     icon: Lightbulb, 
     image: asesorias, 
     link: '/asesorias' 
@@ -96,7 +96,7 @@ const ServicesSection = () => {
                   {services[currentIndex].description}
                 </p>
                 <div className="w-full max-w-4xl cursor-pointer" onClick={handleRedirect}>
-                  <p className="text-sm mr-2" style={{ color: '#072d75' }}><b>Pulsa para más información</b></p>
+                  <p className="text-sm mr-2" style={{ color: '#072d75' }}><br /><b>Pulsa para más información</b></p>
                 </div>
               </div>
             </div>
