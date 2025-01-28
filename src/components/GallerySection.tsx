@@ -34,7 +34,9 @@ const GallerySection = () => {
   return (
     <section id="galeria" className="py-20" style={{ backgroundColor: '#e1e1e1' }}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>Galería</h2>
+        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>
+          Galería
+        </h2>
         
         <div className="relative">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
