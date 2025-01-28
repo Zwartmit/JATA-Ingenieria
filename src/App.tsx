@@ -9,6 +9,7 @@ import CoursePage from "./pages/CursosPage";
 import AsesoriasPage from "./pages/AsesoriasPage";
 import CapacitacionesPage from "./pages/CapacitacionesPage";
 import OtrosServiciosPage from "./pages/OtrosServiciosPage";
+import Dashboard from "./pages/Dashboard";
 import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 import back2 from "./Assets/back2.png";
@@ -79,6 +80,7 @@ function App() {
             <Route path="/asesorias" element={<AsesoriasPage />} />
             <Route path="/capacitaciones" element={<CapacitacionesPage />} />
             <Route path="/otros-servicios" element={<OtrosServiciosPage />} />
+            <Route path="/dash" element={<Dashboard />} />
           </Routes>
         </main>
 

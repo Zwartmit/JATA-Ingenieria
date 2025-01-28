@@ -21,7 +21,7 @@ function CapacitacionesPage() {
   ];
 
   return (
-    <section className="py-20 bg-gray-100">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-gray-900 mb-6 text-center" style={{ textAlign: 'center', textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>Capacitaciones</h2>
         <p className="text-lg text-gray-700 mb-10 text-center" style={{ textAlign: 'center', textShadow: '0px 0px 3px rgba(0, 0, 0, 0.5)' }}>

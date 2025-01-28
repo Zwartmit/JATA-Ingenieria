@@ -16,8 +16,9 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
   const isAsesoriasPage = location.pathname === '/asesorias';
   const isCapacitacionesPage = location.pathname === '/capacitaciones';
   const isOtrosServiciosPage = location.pathname === '/otros-servicios';
+  const isdashPage = location.pathname === '/dash';
 
-  const shouldHideMenu = isCursoPage || isAsesoriasPage || isCapacitacionesPage || isOtrosServiciosPage;
+  const shouldHideMenu = isCursoPage || isAsesoriasPage || isCapacitacionesPage || isOtrosServiciosPage || isdashPage;
 
   return (
     <header className="fixed w-full shadow-md z-50" style={{ background: '#e1e1e1' }}>
