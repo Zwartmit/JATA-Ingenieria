@@ -15,7 +15,7 @@ const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app);
 
 export async function certificados(file) {
-  const storageRef = ref(storage, file.name);
+  const storageRef = ref(storage, `Certificados/${file.name}`); // Carpeta "certificados/"
   await uploadBytes(storageRef, file)
   const url = await getDownloadURL(storageRef)
   return url
