@@ -16,16 +16,15 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
   const isAsesoriasPage = location.pathname === '/asesorias';
   const isCapacitacionesPage = location.pathname === '/capacitaciones';
   const isOtrosServiciosPage = location.pathname === '/otros-servicios';
-  const isdashPage = location.pathname === '/dash';
 
-  const shouldHideMenu = isCursoPage || isAsesoriasPage || isCapacitacionesPage || isOtrosServiciosPage || isdashPage;
+  const shouldHideMenu = isCursoPage || isAsesoriasPage || isCapacitacionesPage || isOtrosServiciosPage;
 
   return (
     <header className="fixed w-full shadow-md z-50" style={{ background: '#e1e1e1' }}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
         <div className="flex items-center animate-slide-in">
-          <a href="/"><img src={icon} alt="JATA" style={{ width: 'auto', height: '60px' }} /></a>
+          <a href="/"><img src={icon} alt="JATA" style={{ width: 'auto', height: '60px', filter: 'drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5))' }} /></a>
           <span className="ml-2 text-xl sm:text-2xl font-bold" style={{ color: "#12297D", textShadow: '0 0 5px rgba(0, 0, 0, 0.3)' }}>
             <span className="block sm:inline">JATA Mantenimientos </span>
             <span className="block sm:inline">e Ingeniería HSEQ</span>

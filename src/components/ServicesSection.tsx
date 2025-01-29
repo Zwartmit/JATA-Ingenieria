@@ -10,7 +10,7 @@ import otros from '../Assets/Servicios/Otros.jpg';
 const services = [
   { 
     title: 'Cursos certificados', 
-    description: 'Ofrecemos programas de formación especializados con certificación oficial. Estos cursos están diseñados para proporcionar habilidades prácticas y conocimientos avanzados en diversas áreas de la seguridad industrial, gestión HSEQ y más, con un enfoque práctico y actualizado.', 
+    description: 'Ofrecemos entrenamientos especializados con certificación oficial. Estos cursos están diseñados para proporcionar habilidades prácticas y conocimientos avanzados en diversas áreas de la seguridad industrial, gestión HSEQ y más, con un enfoque práctico y actualizado.', 
     icon: GraduationCap, 
     image: cursos, 
     link: '/cursos-certificados' 
