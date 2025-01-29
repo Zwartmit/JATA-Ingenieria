@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const images = [
-  'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80',
-];
+import Img1 from '../Assets/Galeria/Excavadora.jpg';
+import Img2 from '../Assets/Galeria/Manlift.jpg';
+import Img3 from '../Assets/Galeria/Minicargador.jpg';
+// import Img4 from '../Assets/Galeria/4.jpg';
+// import Img5 from '../Assets/Galeria/5.jpg';
+// import Img6 from '../Assets/Galeria/6.jpg';
+// import Img7 from '../Assets/Galeria/7.jpg';
+// import Img8 from '../Assets/Galeria/8.jpg';
+// import Img9 from '../Assets/Galeria/9.jpg';
+// import Img10 from '../Assets/Galeria/10.jpg';
+
+const images = [Img1 , Img2, Img3];
 
 const GallerySection = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -41,12 +42,11 @@ const GallerySection = () => {
         <div className="relative">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {currentImages.map((image, index) => (
-              <div key={index} className="relative aspect-square overflow-hidden rounded-lg">
+              <div key={index} className="relative aspect-square overflow-hidden rounded-lg" style={{ boxShadow: ' 0px 0px 8px rgba(0, 0, 0)', borderRadius: '30px' }}>
                 <img
                   src={image}
                   alt={`Gallery image ${index + 1}`}
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                  style={{ boxShadow: '3px 3px 4px rgba(0, 0, 0)' }}
                 />
               </div>
             ))}
