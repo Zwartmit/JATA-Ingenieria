@@ -20,8 +20,8 @@ const CertificateSearch = () => {
   return (
     <section id="certificados" className="py-20 text-white overflow-hidden" style={{ backgroundColor: '#12297D' }}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>
-          Generar certificados
+        <h2 className="text-4xl font-bold text-center mb-20 animate-fade-in" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>
+          Certificados
         </h2>
 
         <div className="max-w-md mx-auto animate-scale-in">
@@ -41,7 +41,7 @@ const CertificateSearch = () => {
             onClick={handleOutsideClick}
           >
             <div
-              className="bg-[#12297d] text-white rounded-lg p-2 w-full md:w-4/5 lg:w-3/4 xl:w-2/3 relative"
+              className="bg-[#e1e1e1] text-black rounded-lg p-2 w-full md:w-4/5 lg:w-3/4 xl:w-2/3 relative"
               style={{ borderRadius: '30px', border: '2px solid #12297d', boxShadow: '0px 0px 10px rgb(0, 0, 0)' }}
             >
               <button
@@ -50,7 +50,7 @@ const CertificateSearch = () => {
               >
                 ❌
               </button>
-              <h3 className="text-2xl font-semibold mb-4 text-center">Certificados disponibles</h3>
+              <h3 className="text-3xl font-bold mb-4 text-center">Certificados disponibles</h3>
               <iframe
                 src={`https://drive.google.com/embeddedfolderview?id=1VHVyLDhRAd4u3eCFMPq-lbnsLeZbyl8I#grid`}
                 width="100%"
@@ -58,7 +58,7 @@ const CertificateSearch = () => {
                 frameBorder="0"
                 allowFullScreen
                 title="Google Drive"
-                style={{ borderRadius: '30px', border: '2px solid rgb(0, 0, 0)', backgroundColor: 'white', boxShadow: '0px 0px 10px rgb(0, 0, 0)' }}
+                style={{ borderRadius: '10px', backgroundColor: '#e1e1e1' }}
               ></iframe>
             </div>
           </div>

@@ -1,8 +1,9 @@
 import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
-import back2 from "./Assets/back2.png";
+import back from "./Assets/back.png";
 import notFoundImage from "./Assets/notFound.png";
+// import video from "./Assets/video.mp4";
 import Header from "./components/Header";
 import AboutSection from "./components/AboutSection";
 import ServicesSection from "./components/ServicesSection";
@@ -54,18 +55,33 @@ function App() {
 
         <main className="flex-grow pt-16">
           <Routes>
-            <Route path="/" element={<><section id="inicio" className="min-h-screen flex items-center justify-center text-white" style={{ backgroundImage: `url(${back2})`, backgroundSize: "cover", backgroundPosition: "center" }} >
-                <div className="container mx-auto px-4 py-20 text-center bg-black bg-opacity-60 rounded-lg">
-                  <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ textShadow: "4px 4px 4px rgb(0, 0, 0)" }} >
+            <Route path="/" element={<><section id="inicio" className="relative min-h-screen flex items-center justify-center text-white"
+                style={{
+                  backgroundImage: `url(${back})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                {/* <section id="inicio" className="relative min-h-screen flex items-center justify-center text-white" >
+                <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" >
+                  <source src={video} type="video/mp4" />
+                  Tu navegador no soporta videos.
+                </video> */}
+                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+                <div className="relative container mx-auto px-4 py-20 text-center  bg-opacity-30 rounded-lg" style={{ borderRadius: "100px" }}>
+                  <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ textShadow: "4px 4px 4px rgb(0, 0, 0)" }}>
                     JATA Mantenimientos e Ingeniería HSEQ
                   </h1>
-                  <p className="text-xl md:text-2xl mb-8" style={{ textShadow: "4px 4px 4px rgb(0, 0, 0)" }} >
+                  <p className="text-xl md:text-2xl mb-8" style={{ textShadow: "4px 4px 4px rgb(0, 0, 0)" }}>
                     Soluciones integrales en capacitación, certificación y mantenimiento mecánico e industrial.
                   </p>
-                  <a href="#contacto" className="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition duration-300" style={{ boxShadow: "4px 4px 4px rgb(0, 0, 0)" }} > Contáctanos
+                  <a href="#contacto" className="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition duration-300" style={{ boxShadow: "4px 4px 4px rgb(0, 0, 0)" }} >
+                    Contáctanos
                   </a>
                 </div>
               </section>
+
               <div style={{ background: "linear-gradient(to bottom, #072d75, #e1e1e1)" }}>&nbsp;</div>
               <AboutSection />
               <div className="w-full h-[2px] bg-gradient-to-r from-[#12297D] via-[#E0E3EB] to-[#12297D] mx-auto"></div>
