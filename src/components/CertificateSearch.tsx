@@ -82,10 +82,7 @@ const CertificateSearch = () => {
         {isModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={(e) => e.target === e.currentTarget && setIsModalOpen(false)}>
             <div className="bg-[#e1e1e1] text-black rounded-lg p-4 w-full md:w-4/5 lg:w-3/4 xl:w-2/3 relative" style={{ borderRadius: '30px', border: '2px solid #12297d', boxShadow: '0px 0px 10px rgb(0, 0, 0)' }}>
-              <button onClick={() => setIsModalOpen(false)} className="absolute top-4 right-4 py-2 px-4 text-white rounded-md cursor-pointer transition-all duration-300 hover:scale-110">
-                ❌
-              </button>
-              <h3 className="text-3xl font-bold mb-4 text-center">Certificados disponibles</h3>
+              <h3 className="text-3xl font-bold mb-4 text-center">Certificados</h3>
 
               {/* Input de búsqueda */}
               <div className="text-center mb-4">
@@ -102,31 +99,33 @@ const CertificateSearch = () => {
               {isFiltering && (
                 <div className="overflow-x-auto text-black" style={{ backgroundColor: '#ffffff', borderRadius: '20px' }}>
                   {filteredFiles.length > 0 ? (
-                    <table className="min-w-full table-auto border-collapse">
-                      <thead>
-                        <tr className="bg-blue-800 text-white">
-                          <th className="py-2 px-4 border-b">Nombre</th>
-                          <th className="py-2 px-4 border-b"></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {filteredFiles.map((file) => (
-                          <tr key={file.id} className="border-b hover:bg-gray-100">
-                            <td className="py-2 px-4">{file.name}</td>
-                            <td className="py-2 px-4">
-                              <a
-                                href={`https://drive.google.com/file/d/${file.id}/view`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-blue-700 hover:text-blue-500 flex items-center justify-center"
-                              >
-                                <FaSearch className="mr-2" />
-                              </a>
-                            </td>
+                    <div className="max-h-80 overflow-y-auto">
+                      <table className="min-w-full table-auto border-collapse">
+                        <thead>
+                          <tr className="bg-blue-800 text-white">
+                            <th className="py-2 px-4 border-b">Nombre</th>
+                            <th className="py-2 px-4 border-b"></th>
                           </tr>
-                        ))}
-                      </tbody>
-                    </table>
+                        </thead>
+                        <tbody>
+                          {filteredFiles.map((file) => (
+                            <tr key={file.id} className="border-b hover:bg-gray-100">
+                              <td className="py-2 px-4">{file.name}</td>
+                              <td className="py-2 px-4">
+                                <a
+                                  href={`https://drive.google.com/file/d/${file.id}/view`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-blue-700 hover:text-blue-500 flex items-center justify-center"
+                                >
+                                  <FaSearch className="mr-2" />
+                                </a>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
                   ) : (
                     <p className="text-center">No se encontraron certificados.</p>
                   )}
