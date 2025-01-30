@@ -26,7 +26,7 @@ const AboutSection = () => {
           <div>
             <p className="text-lg text-gray-800 mb-6" style={{ textAlign: 'justify', textShadow: '0px 0px 3px rgba(0, 0, 0, 0.5)' }}>
               <b>JATA MANTENIMIENTOS E INGENIERÍA HSEQ </b>es una empresa dedicada a brindar asesorías, consultorías, capacitaciones y certificaciones
-              de temas relacionados con Seguridad y Salud en el Trabajo, certificaciones de operadores de
+              en temas relacionados con Seguridad y Salud en el Trabajo, certificaciones de operadores de
               maquinaria pesada y de equipos de izaje, mantenimiento de equipos y maquinarias.
             </p>
 
