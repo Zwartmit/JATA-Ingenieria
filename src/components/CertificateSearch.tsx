@@ -14,7 +14,7 @@ const CertificateSearch = () => {
   
   const [files, setFiles] = useState<File[]>([]);
   const [isFiltering, setIsFiltering] = useState(false);
-
+  
   const getFiles = async (folderId: string) => {
     try {
       let filesData = await fetch(
