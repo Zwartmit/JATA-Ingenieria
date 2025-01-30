@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Certificado from '../Assets/Certificado.png';
 
 const CertificateSearch = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,9 +21,12 @@ const CertificateSearch = () => {
   return (
     <section id="certificados" className="py-20 text-white overflow-hidden" style={{ backgroundColor: '#12297D' }}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-20 animate-fade-in" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>
+        <h2 className="text-4xl font-bold text-center mb-2 animate-fade-in" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>
           Certificados
         </h2>
+        <div className="flex items-center mb-5 justify-center animate-fade-in">
+          <img src={Certificado} alt="Certificado" style={{ width: 'auto', height: '150px', filter: 'drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.82))' }}/>
+        </div>
 
         <div className="max-w-md mx-auto animate-scale-in">
           <div className="text-center">

@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 import back from "./Assets/back.png";
 import notFoundImage from "./Assets/notFound.png";
-// import video from "./Assets/video.mp4";
 import Header from "./components/Header";
 import AboutSection from "./components/AboutSection";
 import ServicesSection from "./components/ServicesSection";
@@ -62,12 +61,7 @@ function App() {
                   backgroundPosition: "center",
                 }}
               >
-                {/* <section id="inicio" className="relative min-h-screen flex items-center justify-center text-white" >
-                <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" >
-                  <source src={video} type="video/mp4" />
-                  Tu navegador no soporta videos.
-                </video> */}
-                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                <div className="absolute inset-0 bg-black bg-opacity-55"></div>
 
                 <div className="relative container mx-auto px-4 py-20 text-center  bg-opacity-30 rounded-lg" style={{ borderRadius: "100px" }}>
                   <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ textShadow: "4px 4px 4px rgb(0, 0, 0)" }}>

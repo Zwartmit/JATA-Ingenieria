@@ -1,23 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Excavadora from "../Assets/Galeria/Excavadora.jpg";
+import Manlift from "../Assets/Galeria/Manlift.jpg";
+import Montacargas from "../Assets/Galeria/Montacargas.jpg";
+import Izaje from "../Assets/Galeria/Izaje.jpg";
+import Rigger from "../Assets/Galeria/Rigger.jpg";
+import Minicargador from "../Assets/Galeria/Minicargador.jpg";
+import Cargador from "../Assets/Galeria/Cargador.jpg";
+import Pausas from "../Assets/Galeria/Pausas.jpg";
+import Alturas from "../Assets/Galeria/Alturas.jpg";
 
-import Img1 from '../Assets/Galeria/Excavadora.jpg';
-import Img2 from '../Assets/Galeria/Manlift.jpg';
-import Img3 from '../Assets/Galeria/Minicargador.jpg';
-// import Img4 from '../Assets/Galeria/4.jpg';
-// import Img5 from '../Assets/Galeria/5.jpg';
-// import Img6 from '../Assets/Galeria/6.jpg';
-// import Img7 from '../Assets/Galeria/7.jpg';
-// import Img8 from '../Assets/Galeria/8.jpg';
-// import Img9 from '../Assets/Galeria/9.jpg';
-// import Img10 from '../Assets/Galeria/10.jpg';
-
-const images = [Img1 , Img2, Img3];
+const images = [Pausas, Excavadora, Minicargador, Manlift, Montacargas, Izaje, Rigger, Cargador, Alturas];
 
 const GallerySection = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const imagesPerPage = 6;
+  const imagesPerPage = 3;
   const totalPages = Math.ceil(images.length / imagesPerPage);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPage((prev) => (prev + 1) % totalPages);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [totalPages]);
 
   const nextPage = () => {
     setCurrentPage((prev) => (prev + 1) % totalPages);
