@@ -4,13 +4,7 @@
   status = 200
 
 [[redirects]]
-  from = "http://jatamttoingenieriahseq.com/*"
+  from = "http://*jatamttoingenieriahseq.com/*"
   to = "https://jatamttoingenieriahseq.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "http://www.jatamttoingenieriahseq.com/*"
-  to = "https://www.jatamttoingenieriahseq.com/:splat"
   status = 301
   force = true
