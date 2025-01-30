@@ -1,34 +1,34 @@
 import { useState, useEffect } from 'react';
 import Certificado from '../Assets/Certificado.png';
-import { FaSearch } from 'react-icons/fa'; // Importa el ícono de lupa
 
-const DRIVE_FOLDER_ID = '1kXoHpYss_2lyogpSjjQv9HPShRBNbm19'; // Reemplaza con tu carpeta de Drive
-const API_KEY = 'AIzaSyDnxrHF8JRbHgdzLeceUWGiMR2Ej6ahLlM'; // Reemplaza con tu API Key de Google Drive
+const DRIVE_FOLDER_ID = '1kXoHpYss_2lyogpSjjQv9HPShRBNbm19';
+const API_KEY = 'AIzaSyDnxrHF8JRbHgdzLeceUWGiMR2Ej6ahLlM';
 
 const CertificateSearch = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [files, setFiles] = useState([]);
-  const [isFiltering, setIsFiltering] = useState(false); // Estado para alternar entre lista filtrada y el iframe
+  interface File {
+    id: string;
+    name: string;
+  }
+  
+  const [files, setFiles] = useState<File[]>([]);
+  const [isFiltering, setIsFiltering] = useState(false);
 
-  // Función para obtener archivos de una carpeta (incluidas subcarpetas)
-  const getFiles = async (folderId) => {
+  const getFiles = async (folderId: string) => {
     try {
-      // Obtener archivos de la carpeta principal
       let filesData = await fetch(
         `https://www.googleapis.com/drive/v3/files?q='${folderId}' in parents&key=${API_KEY}`
       );
       let data = await filesData.json();
       let filesInFolder = data.files || [];
 
-      // Obtener subcarpetas de la carpeta principal
       let subfoldersData = await fetch(
         `https://www.googleapis.com/drive/v3/files?q='${folderId}' in parents and mimeType='application/vnd.google-apps.folder'&key=${API_KEY}`
       );
       let subfolders = await subfoldersData.json();
-      let subfolderIds = subfolders.files.map((folder) => folder.id);
+      let subfolderIds = subfolders.files.map((folder: { id: string }) => folder.id);
 
-      // Obtener archivos de las subcarpetas
       for (let subfolderId of subfolderIds) {
         let subfolderFilesData = await fetch(
           `https://www.googleapis.com/drive/v3/files?q='${subfolderId}' in parents&key=${API_KEY}`
@@ -54,7 +54,6 @@ const CertificateSearch = () => {
   );
 
   useEffect(() => {
-    // Cuando se escriba en el input de búsqueda, activamos el filtro
     setIsFiltering(searchTerm.trim() !== '');
   }, [searchTerm]);
 
@@ -82,9 +81,16 @@ const CertificateSearch = () => {
         {isModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={(e) => e.target === e.currentTarget && setIsModalOpen(false)}>
             <div className="bg-[#e1e1e1] text-black rounded-lg p-4 w-full md:w-4/5 lg:w-3/4 xl:w-2/3 relative" style={{ borderRadius: '30px', border: '2px solid #12297d', boxShadow: '0px 0px 10px rgb(0, 0, 0)' }}>
-              <h3 className="text-3xl font-bold mb-4 text-center">Certificados</h3>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="absolute top-2 right-3 cursor-pointer"
+                style={{ textShadow: '0px 0px 3px rgba(0, 0, 0, 0.5)' }}
+              >
+                ❌
+              </button>
 
-              {/* Input de búsqueda */}
+              <h3 className="text-3xl font-bold mb-4 text-center" style={{ textShadow: '3px 3px 5px rgba(0, 0, 0, 0.3)' }}>Certificados</h3>
+
               <div className="text-center mb-4">
                 <input
                   type="text"
@@ -95,30 +101,23 @@ const CertificateSearch = () => {
                 />
               </div>
 
-              {/* Mostrar tabla si se está filtrando */}
               {isFiltering && (
-                <div className="overflow-x-auto text-black" style={{ backgroundColor: '#ffffff', borderRadius: '20px' }}>
+                <div className="overflow-x-auto text-black text-center">
                   {filteredFiles.length > 0 ? (
                     <div className="max-h-80 overflow-y-auto">
                       <table className="min-w-full table-auto border-collapse">
-                        <thead>
-                          <tr className="bg-blue-800 text-white">
-                            <th className="py-2 px-4 border-b">Nombre</th>
-                            <th className="py-2 px-4 border-b"></th>
-                          </tr>
-                        </thead>
                         <tbody>
                           {filteredFiles.map((file) => (
                             <tr key={file.id} className="border-b hover:bg-gray-100">
-                              <td className="py-2 px-4">{file.name}</td>
                               <td className="py-2 px-4">
                                 <a
                                   href={`https://drive.google.com/file/d/${file.id}/view`}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="text-blue-700 hover:text-blue-500 flex items-center justify-center"
+                                  className="text-blue-700 hover:text-blue-500 block"
+                                  style={{ textShadow: '0px 0px 3px rgba(0, 0, 0, 0.4)' }}
                                 >
-                                  <FaSearch className="mr-2" />
+                                  {file.name}
                                 </a>
                               </td>
                             </tr>
