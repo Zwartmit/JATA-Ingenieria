@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { GraduationCap, Lightbulb, Users, Wrench, ChevronLeft, ChevronRight } from 'lucide-react';
+import { GraduationCap, Lightbulb, Users, /* Wrench, */ ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
 import cursos from '../Assets/Servicios/Cursos.avif';
 import asesorias from '../Assets/Servicios/Asesorias.avif';
 import capacitaciones from '../Assets/Servicios/Capacitaciones.avif';
-import otros from '../Assets/Servicios/Otros.jpg';
+// import otros from '../Assets/Servicios/Otros.jpg';
 
 const services = [
   { 

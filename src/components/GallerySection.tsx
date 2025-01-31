@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+// import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Excavadora from "../Assets/Galeria/Excavadora.jpg";
 import Manlift from "../Assets/Galeria/Manlift.jpg";
 import Montacargas from "../Assets/Galeria/Montacargas.jpg";
@@ -20,18 +20,18 @@ const GallerySection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPage((prev) => (prev + 1) % totalPages);
-    }, 4000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [totalPages]);
 
-  const nextPage = () => {
-    setCurrentPage((prev) => (prev + 1) % totalPages);
-  };
+  // const nextPage = () => {
+  //   setCurrentPage((prev) => (prev + 1) % totalPages);
+  // };
 
-  const prevPage = () => {
-    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
-  };
+  // const prevPage = () => {
+  //   setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+  // };
 
   const currentImages = images.slice(
     currentPage * imagesPerPage,
@@ -57,7 +57,7 @@ const GallerySection = () => {
               </div>
             ))}
           </div>
-
+{/* 
           {totalPages > 1 && (
             <div className="flex justify-center mt-8 space-x-4">
               <button
@@ -73,7 +73,7 @@ const GallerySection = () => {
                 <ChevronRight className="w-6 h-6" />
               </button>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </section>
