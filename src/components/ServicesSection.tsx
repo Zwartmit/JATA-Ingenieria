@@ -29,13 +29,13 @@ const services = [
     image: capacitaciones, 
     link: '/capacitaciones' 
   },
-  { 
-    title: 'Otros servicios', 
-    description: 'Disponemos de una amplia gama de soluciones adicionales adaptadas a sus necesidades específicas, desde auditorías especializadas hasta servicios de implementación y mantenimiento de sistemas de gestión. Estamos comprometidos con brindar apoyo integral para garantizar el éxito y la sostenibilidad de su empresa.', 
-    icon: Wrench, 
-    image: otros, 
-    link: '/otros-servicios' 
-  }
+  // { 
+  //   title: 'Otros servicios', 
+  //   description: 'Disponemos de una amplia gama de soluciones adicionales adaptadas a sus necesidades específicas, desde auditorías especializadas hasta servicios de implementación y mantenimiento de sistemas de gestión. Estamos comprometidos con brindar apoyo integral para garantizar el éxito y la sostenibilidad de su empresa.', 
+  //   icon: Wrench, 
+  //   image: otros, 
+  //   link: '/otros-servicios' 
+  // }
 ];
 
 const ServicesSection = () => {
