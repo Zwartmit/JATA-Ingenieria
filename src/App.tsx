@@ -46,10 +46,10 @@ function App() {
       <div className="flex flex-col min-h-screen bg-white">
         <Routes>
           <Route path="/" element={<Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />} />
-          <Route path="/cursos-certificados" element={<Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />} />
+          <Route path="/cursos" element={<Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />} />
           <Route path="/asesorias" element={<Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />} />
           <Route path="/capacitaciones" element={<Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />} />
-          <Route path="/otros-servicios" element={<Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />} />
+          <Route path="/otros" element={<Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />} />
         </Routes>
 
         <main className="flex-grow pt-16">
@@ -89,10 +89,10 @@ function App() {
               <div style={{ background: "linear-gradient(to top, #072d75, #e1e1e1)" }}>&nbsp;</div>
             </>}/>
             
-            <Route path="/cursos-certificados" element={<CoursePage />} />
+            <Route path="/cursos" element={<CoursePage />} />
             <Route path="/asesorias" element={<AsesoriasPage />} />
             <Route path="/capacitaciones" element={<CapacitacionesPage />} />
-            <Route path="/otros-servicios" element={<OtrosServiciosPage />} />
+            <Route path="/otros" element={<OtrosServiciosPage />} />
             <Route path="*" element={
                 <div className="flex items-center justify-center flex-col" style={{ paddingTop: '50px' }}>
                   <img src={notFoundImage} alt="Page Not Found" className="mb-2" style={{ width: 'auto', height: '250px', filter: 'drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))' }} />

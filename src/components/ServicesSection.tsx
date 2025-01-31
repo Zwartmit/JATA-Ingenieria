@@ -13,7 +13,7 @@ const services = [
     description: 'Ofrecemos entrenamientos especializados con certificación oficial. Estos cursos están diseñados para proporcionar habilidades prácticas y conocimientos avanzados en diversas áreas de la seguridad industrial, gestión HSEQ y más, con un enfoque práctico y actualizado.', 
     icon: GraduationCap, 
     image: cursos, 
-    link: '/cursos-certificados' 
+    link: '/cursos' 
   },
   { 
     title: 'Asesorías y consultas', 
@@ -34,7 +34,7 @@ const services = [
   //   description: 'Disponemos de una amplia gama de soluciones adicionales adaptadas a sus necesidades específicas, desde auditorías especializadas hasta servicios de implementación y mantenimiento de sistemas de gestión. Estamos comprometidos con brindar apoyo integral para garantizar el éxito y la sostenibilidad de su empresa.', 
   //   icon: Wrench, 
   //   image: otros, 
-  //   link: '/otros-servicios' 
+  //   link: '/otross' 
   // }
 ];
 

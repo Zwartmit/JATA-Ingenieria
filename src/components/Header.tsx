@@ -12,10 +12,10 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
   const menuItems = ['Inicio', 'Nosotros', 'Servicios', 'Certificados', 'Galería', 'Contacto'];
   const menuLinks = ['inicio', 'nosotros', 'servicios', 'certificados', 'galeria', 'contacto'];
 
-  const isCursoPage = location.pathname === '/cursos-certificados';
+  const isCursoPage = location.pathname === '/cursos';
   const isAsesoriasPage = location.pathname === '/asesorias';
   const isCapacitacionesPage = location.pathname === '/capacitaciones';
-  const isOtrosServiciosPage = location.pathname === '/otros-servicios';
+  const isOtrosServiciosPage = location.pathname === '/otros';
 
   const shouldHideMenu = isCursoPage || isAsesoriasPage || isCapacitacionesPage || isOtrosServiciosPage;
 
