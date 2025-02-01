@@ -97,7 +97,7 @@ function App() {
                 <div className="flex items-center justify-center flex-col" style={{ paddingTop: '50px' }}>
                   <img src={notFoundImage} alt="Page Not Found" className="mb-2" style={{ width: 'auto', height: '250px', filter: 'drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))' }} />
                   <h2 className="text-2xl font-semibold" style={{ textShadow: '0px 0px 4px rgba(0, 0, 0, 0.5)' }}>
-                    Esta página no está disponible
+                    Lo sentimos, esta página no está disponible
                   </h2>
                   <Link to="/" className="mt-4 px-6 py-2 text-white bg-blue-900 rounded-md hover:bg-blue-800 transition-all duration-300" style={{ textShadow: '0px 0px 4px rgba(0, 0, 0, 0.5)', borderRadius: '20px' }}>
                     Volver al inicio

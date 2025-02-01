@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { GraduationCap, Lightbulb, Users, /* Wrench, */ ChevronLeft, ChevronRight } from 'lucide-react';
+import { GraduationCap, Lightbulb, Users, Wrench, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
 import cursos from '../Assets/Servicios/Cursos.avif';
 import asesorias from '../Assets/Servicios/Asesorias.avif';
 import capacitaciones from '../Assets/Servicios/Capacitaciones.avif';
-// import otros from '../Assets/Servicios/Otros.jpg';
+import otros from '../Assets/Servicios/Otros.jpg';
 
 const services = [
   { 
@@ -29,13 +29,13 @@ const services = [
     image: capacitaciones, 
     link: '/capacitaciones' 
   },
-  // { 
-  //   title: 'Otros servicios', 
-  //   description: 'Disponemos de una amplia gama de soluciones adicionales adaptadas a sus necesidades específicas, desde auditorías especializadas hasta servicios de implementación y mantenimiento de sistemas de gestión. Estamos comprometidos con brindar apoyo integral para garantizar el éxito y la sostenibilidad de su empresa.', 
-  //   icon: Wrench, 
-  //   image: otros, 
-  //   link: '/otross' 
-  // }
+  { 
+    title: 'Otros servicios', 
+    description: 'Disponemos de soluciones adicionales adaptadas a sus necesidades específicas. Estamos comprometidos con brindar apoyo integral para garantizar el éxito y la sostenibilidad de su empresa.', 
+    icon: Wrench, 
+    image: otros, 
+    link: '/otros' 
+  }
 ];
 
 const ServicesSection = () => {

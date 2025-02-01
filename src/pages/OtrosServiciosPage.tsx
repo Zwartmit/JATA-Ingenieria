@@ -1,4 +1,7 @@
 import { useEffect } from "react";
+import caliente from "../Assets/Otros/Caliente.jpg";
+import energias from "../Assets/Otros/Energias.jpg";
+import auxilios from "../Assets/Otros/Auxilios.jpg";
 
 function OtrosServiciosPage() {
   useEffect(() => {
@@ -6,12 +9,9 @@ function OtrosServiciosPage() {
   }, []);
 
   const servicios = [
-    { title: "", description: ".", },
-    { title: "", description: ".", },
-    { title: "", description: ".", },
-    { title: "", description: ".", },
-    { title: "", description: ".", },
-    { title: "", description: ".", },
+    { title: "Implementación de programa de trabajo en caliente", description: "Gestión y control de actividades de trabajo en caliente para garantizar la seguridad en operaciones de alto riesgo.", image: caliente },
+    { title: "Manejo y control de energías peligrosas", description: "Procedimientos de bloqueo y etiquetado (LOTO) para prevenir accidentes relacionados con energías peligrosas en el entorno laboral.", image: energias },
+    { title: "Cursos básicos de primeros auxilios", description: "Capacitación en primeros auxilios para responder de manera efectiva ante emergencias médicas en el trabajo o el hogar.", image: auxilios },
   ];
 
   return (
@@ -30,13 +30,14 @@ function OtrosServiciosPage() {
               style={{ textAlign: 'center', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)', backgroundColor: '#e1e1e1' }}
             >
             <img
+              src={servicio.image}
               alt={servicio.title}
               className="w-full h-48 object-cover rounded-md mb-4"
             />
               <h3 className="text-2xl font-semibold text-blue-900 mb-4" style={{ textShadow: '3px 3px 4px rgba(0, 0, 0, 0.3)' }}>
                 {servicio.title}
               </h3>
-              <p className="text-gray-700" style={{ textShadow: '0px 0px 3px rgba(0, 0, 0, 0.5)'}}>{servicio.description}</p>
+              <p className="text-gray-700" style={{ textShadow: '0px 0px 3px rgba(0, 0, 0, 0.5)' }}>{servicio.description}</p>
             </div>
           ))}
         </div>

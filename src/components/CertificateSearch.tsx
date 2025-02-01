@@ -17,23 +17,23 @@ const CertificateSearch = () => {
   
   const getFiles = async (folderId: string) => {
     try {
-      let filesData = await fetch(
+      const filesData = await fetch(
         `https://www.googleapis.com/drive/v3/files?q='${folderId}' in parents&key=${API_KEY}`
       );
-      let data = await filesData.json();
+      const data = await filesData.json();
       let filesInFolder = data.files || [];
 
-      let subfoldersData = await fetch(
+      const subfoldersData = await fetch(
         `https://www.googleapis.com/drive/v3/files?q='${folderId}' in parents and mimeType='application/vnd.google-apps.folder'&key=${API_KEY}`
       );
-      let subfolders = await subfoldersData.json();
-      let subfolderIds = subfolders.files.map((folder: { id: string }) => folder.id);
+      const subfolders = await subfoldersData.json();
+      const subfolderIds = subfolders.files.map((folder: { id: string }) => folder.id);
 
-      for (let subfolderId of subfolderIds) {
-        let subfolderFilesData = await fetch(
+      for (const subfolderId of subfolderIds) {
+        const subfolderFilesData = await fetch(
           `https://www.googleapis.com/drive/v3/files?q='${subfolderId}' in parents&key=${API_KEY}`
         );
-        let subfolderFiles = await subfolderFilesData.json();
+        const subfolderFiles = await subfolderFilesData.json();
         filesInFolder = [...filesInFolder, ...(subfolderFiles.files || [])];
       }
 
@@ -53,6 +53,11 @@ const CertificateSearch = () => {
     file.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSearchTerm('');
+  };  
+  
   useEffect(() => {
     setIsFiltering(searchTerm.trim() !== '');
   }, [searchTerm]);
@@ -79,17 +84,12 @@ const CertificateSearch = () => {
         </div>
 
         {isModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={(e) => e.target === e.currentTarget && setIsModalOpen(false)}>
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={(e) => e.target === e.currentTarget && closeModal()}>
             <div className="bg-[#e1e1e1] text-black rounded-lg p-4 w-full md:w-4/5 lg:w-3/4 xl:w-2/3 relative" style={{ borderRadius: '30px', border: '2px solid #12297d', boxShadow: '0px 0px 10px rgb(0, 0, 0)' }}>
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="absolute top-2 right-3 cursor-pointer"
-                style={{ textShadow: '0px 0px 3px rgba(0, 0, 0, 0.5)' }}
-              >
-                ❌
-              </button>
-
-              <h3 className="text-3xl font-bold mb-4 text-center" style={{ textShadow: '3px 3px 5px rgba(0, 0, 0, 0.3)' }}>Certificados</h3>
+            <button onClick={closeModal} className="absolute top-2 right-3 cursor-pointer">
+              ❌
+            </button>
+            <h3 className="text-3xl font-bold mb-4 text-center" style={{ textShadow: '3px 3px 5px rgba(0, 0, 0, 0.3)' }}>Certificados</h3>
 
               <div className="text-center mb-4">
                 <input
@@ -109,7 +109,7 @@ const CertificateSearch = () => {
                         <tbody>
                           {filteredFiles.map((file) => (
                             <tr key={file.id} className="border-b hover:bg-gray-100">
-                              <td className="py-2 px-4">
+                              <td className="py-2 px-4 text-left md:text-center">
                                 <a
                                   href={`https://drive.google.com/file/d/${file.id}/view`}
                                   target="_blank"
